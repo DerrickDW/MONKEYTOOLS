@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
@@ -12,6 +13,7 @@ public static class Calc
         Console.WriteLine("MONKEY CALC");
         Console.WriteLine("🐒 go ahead calculate something");
         Console.WriteLine("Type 'exit' to quit");
+        double lastResult = 0;
 
         while (true)
         {
@@ -20,12 +22,22 @@ public static class Calc
 
             if (string.IsNullOrWhiteSpace(input))
                 continue;
-
             if (input.ToLower() == "exit")
                 break;
-
+            if (input.ToLower() == "clear")
+            {
+                lastResult = 0;
+                Console.WriteLine("🐒 memory wiped");
+                continue;
+            }
+            if (input.ToLower() == "help")
+            {
+                Console.WriteLine("🐒 count yer banana's supports + - * / parentheses () exponents ^ last result as 'ans' clear memory 'clear'");
+                continue;
+            }
             try
             {
+                input = input.Replace("ans", lastResult.ToString());
                 var tokens = Tokenizer.Tokenize(input);
                 var parser = new Parser(tokens);
                 var ast = parser.ParseExpression();
@@ -33,6 +45,7 @@ public static class Calc
 
                 double result = Evaluator.Evaluate(ast);
                 Console.WriteLine(result);
+                lastResult = result;
 
             }
             catch (DivideByZeroException)
