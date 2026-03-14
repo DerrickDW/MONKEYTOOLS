@@ -26,7 +26,12 @@ public static class Calc
 
             try
             {
-                double result = Evaluator.Evaluate(input);
+                var tokens = Tokenizer.Tokenize(input);
+                var parser = new Parser(tokens);
+                var ast = parser.ParseExpression();
+                //PrintAst(ast);
+
+                double result = Evaluator.Evaluate(ast);
                 Console.WriteLine(result);
 
             }
@@ -37,9 +42,24 @@ public static class Calc
             catch (Exception ex)
             {
                 Console.WriteLine("🚬🐒 ya broke it again");
+                Console.WriteLine(ex);
             }
         }
 
+    }
+    static void PrintAst(Ast ast, string indent = "")
+    {
+        if (ast is NumberNode num)
+        {
+            Console.WriteLine($"{indent}Number({num.Value})");
+            return;
+        }
+        if (ast is BinaryNode bin)
+        {
+            Console.WriteLine($"{indent}Binary({bin.Operator})");
+            PrintAst(bin.Left, indent + "  ");
+            PrintAst(bin.Right, indent + "  ");
+        }
     }
 
 

@@ -9,30 +9,6 @@ namespace MONKEYTOOLS.Calc;
 public static class Tokenizer
 {
 
-   public enum TokenType
-    {
-        Number,
-        Plus,
-        Minus,
-        Multiply,
-        Divide,
-        Power,
-        LeftParen,
-        RightParen,
-
-    }
-    public class Token
-    {
-        public TokenType Type { get; set; }
-        public string Value { get; set; } = "";
-        public override string ToString()
-        {
-
-            return $"{Type}: {Value}";
-        }
-
-    }
-
     public static List<Token> Tokenize(string input)
     {
         List<Token> tokens = new();
@@ -112,9 +88,11 @@ public static class Tokenizer
                 default:
                     throw new Exception($"🚬🐒 What in the hell did you even type?: '{c}' ");
             }
+            
 
             i++;
         }
+        tokens.Add(new Token { Type = TokenType.EOF, Value = "" });
 
         return tokens;
     }
