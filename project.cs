@@ -1,5 +1,7 @@
 ﻿using MONKEYTOOLS.Calc;
+using MONKEYTOOLS.Scan;
 using System;
+using System.Linq;
 using System.ComponentModel.Design;
 class Program
 {
@@ -19,6 +21,10 @@ class Program
             {
             case "calc":
                 Calc.Run();
+                break;
+
+            case "scan":
+                Scan.Run(args.Skip(1).ToArray());
                 break;
 
             //case "ugly":
