@@ -57,4 +57,5 @@
 
 - of course monkey --tame to make the chaos dissappear
 
-- 🚬🐒 systems stable
+- 🚬🐒 systems unstable
+but scope is a problem
