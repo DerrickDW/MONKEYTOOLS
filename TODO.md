@@ -17,4 +17,7 @@ MONKEYTOOLS TODO
 - monkey audit
 - monkey portmap
 
+## Nethack Wrapper
+- Figure out the args to make it launch right
+
 ## 🚬🐒 systems stable
