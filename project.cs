@@ -1,11 +1,6 @@
 ﻿using MONKEYTOOLS.Calc;
 using MONKEYTOOLS.Scan;
-using System;
-using System.Linq;
-using System.ComponentModel.Design;
-using System.IO;
-using System.Diagnostics;
-using System.Security.Cryptography.X509Certificates;
+using MONKEYTOOLS.Sort;
 using MONKEYTOOLS;
 class Program
 {
@@ -35,7 +30,9 @@ class Program
                 NethackWrapper.Run(args.Skip(1).ToArray());
                 break;
             
-            
+            case "sort":
+                Sort.Run(args.Skip(1).ToArray());
+                break;
             //case "ugly":
             //Ugly.Run(args.Skip(1).ToArray());
             //break;
