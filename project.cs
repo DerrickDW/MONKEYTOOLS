@@ -32,13 +32,10 @@ class Program
                 break;
 
             case "nethack":
-                NethackWrapper.Run(args.ToArray());
+                NethackWrapper.Run(args.Skip(1).ToArray());
                 break;
-
-            //Add Args to make --gui or --cmd launch respective launcher
-
-                
-
+            
+            
             //case "ugly":
             //Ugly.Run(args.Skip(1).ToArray());
             //break;

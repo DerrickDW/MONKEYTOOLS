@@ -73,22 +73,23 @@ public class NethackWrapper
         string input = Console.ReadLine() ?? "";
         if (string.IsNullOrWhiteSpace(input))
         {
-            if (input.ToLower() == "exit")
+            if (input.ToLower() == "exit") ;
 
 
-                if (input.ToLower() == "1") ;
+
 
         }
-        //FIGURE OUT THE ARGS
-        Process.Start(new ProcessStartInfo
-        {
-            FileName = cmdexe,
-            WorkingDirectory = GetNetHackDir(),
-            //Arguments = "--cmd",
-            UseShellExecute = true
 
-        });
-        if (input.ToLower() == "2")
+        else if (input.ToLower() == "1")
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = cmdexe,
+                WorkingDirectory = GetNetHackDir(),
+                //Arguments = "--cmd",
+                UseShellExecute = true
+
+            });
+        else if (input.ToLower() == "2");
             Process.Start(new ProcessStartInfo
             {
                 FileName = guiexe,
@@ -96,7 +97,7 @@ public class NethackWrapper
                 //Arguments = "--gui",
                 UseShellExecute = true
             });
-        }
+    }
     }
 
 
