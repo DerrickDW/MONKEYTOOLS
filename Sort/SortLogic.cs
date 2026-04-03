@@ -17,6 +17,7 @@ namespace MONKEYTOOLS.Sort;
             
             {
                 Console.WriteLine(file);
+                //FIX STRUCTURE DO THINGS UP IN HERE AND STUFF
             }
         }
         private static IEnumerable<string> GetVideoFiles;
