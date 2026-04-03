@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Text;
 using static System.IO.Directory;
+using System.IO;
 
 namespace MONKEYTOOLS.Sort;
 
@@ -19,14 +20,13 @@ public static class Sort
             return;
         }
         
-        string path = Path.GetFullPath(args[0]);
+        string originPath = Path.GetFullPath(args[0]);
 
-        if (Path.Exists(path)) 
-            SortLogic.RunLogic(path);
-        
-        else
+        if (!Directory.Exists(originPath))
         {
-            Console.WriteLine("No Folder Found");
+            Console.WriteLine("No Folder Found"); 
         }
+        SortLogic.RunLogic(originPath: originPath);
+        
     }
 }
