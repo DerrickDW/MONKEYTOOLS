@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System.ComponentModel.Design;
+using System.Linq;
 using System.Text;
+using static System.IO.Directory;
+
 namespace MONKEYTOOLS.Sort;
 
-public class Sort
+public static class Sort
 {
     public static void Run(string[] args)
     {
@@ -16,15 +19,14 @@ public class Sort
             return;
         }
         
-        string root = args[0];
-        if (!Directory.Exists(root))
-        {
-            Console.WriteLine(" Folder does not exist");
-        }
+        string path = Path.GetFullPath(args[0]);
 
-        foreach (var file in Directory.GetFiles(root))
+        if (Path.Exists(path)) 
+            SortLogic.RunLogic(path);
+        
+        else
         {
-            HandleFile(file, root);
+            Console.WriteLine("No Folder Found");
         }
     }
 }
