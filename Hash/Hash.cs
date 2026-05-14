@@ -1,4 +1,7 @@
-﻿namespace MONKEYTOOLS.Hash;
+﻿using System.ComponentModel.Design;
+using System.Runtime.CompilerServices;
+
+namespace MONKEYTOOLS.Hash;
 using System.Security.Cryptography;
 using System.Text;
 using System;
@@ -20,5 +23,27 @@ public class Hash
         };
         
         return Convert.ToHexString(hashBytes).ToLowerInvariant();
+        
+        static string? DetectHashAlgorithm(string hash)
+        {
+            hash = hash.Trim();
+
+            return hash.Length switch
+            {
+                32 => "md5",
+                40 => "sha1",
+                64 => "sha256",
+                96 => "sha384",
+                128 => "sha512",
+                _ => "null"
+            };
+        }
+
+        var actual = ComputeHash(path, algorithm);
+        var expected = expectedHash.Trim().ToLowerInvariant();
+        //if hashBytes && expectedHash != DetectHashAlgorithm;
+            //Console.WriteLine("Hash Algorithms Do Not Match");
+            
+        Console.WriteLine(actual == expected ? "Match" : "No Match");
     }
 }
