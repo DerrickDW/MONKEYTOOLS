@@ -2,6 +2,8 @@
 using MONKEYTOOLS.Scan;
 using MONKEYTOOLS.Sort;
 using MONKEYTOOLS;
+using MONKEYTOOLS.Hash;
+
 class Program
 {
 
@@ -32,6 +34,10 @@ class Program
             
             case "sort":
                 Sort.Run(args.Skip(1).ToArray());
+                break;
+            
+            case "hash":
+                Hash.Run(args.Skip(1).ToArray());
                 break;
             //case "ugly":
             //Ugly.Run(args.Skip(1).ToArray());

@@ -12,12 +12,9 @@ MONKEYTOOLS TODO
 
 ## TOOLS
 - monkey ugly
-- folder orgainizer
 - packet sniff mode
 - monkey audit
 - monkey portmap
 
-## Nethack Wrapper
-- Figure out the args to make it launch right
 
 ## 🚬🐒 systems stable
