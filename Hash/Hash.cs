@@ -5,10 +5,23 @@ namespace MONKEYTOOLS.Hash;
 using System.Security.Cryptography;
 using System.Text;
 using System;
-
+// TODO:
+// Finish Runner Logic, Args, User Input, Help
+// Add Comparision Function
+// Wire Into Launcher
 public class Hash
 {
-    static string ComputeHash(string path, string algorithm = "sha256")
+    public static void Run(string[] args)
+    {
+        if (args.Length == 0)
+        {
+            Console.WriteLine("Hash Checker");
+            Console.WriteLine("🚬🐒Monkey Generate Hash and/or Make Sure Hashes Match");
+            Console.WriteLine("Usage: <file path>, <hash to compare> [--compute-hash] [--detect-algo]");
+            Console.WriteLine("Type 'exit' to Quit or 'help' for Help");
+        }
+
+        static string ComputeHash(string path, string algorithm = "sha256")
     {
         using var stream = File.OpenRead(path);
 
