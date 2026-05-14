@@ -9,6 +9,8 @@ using System;
 // Finish Runner Logic, Args, User Input, Help
 // Add Comparision Function
 // Wire Into Launcher
+// Desired Uses <file> [--algo-'algorithm'] (default SHA256) <file> <hash> (compare) <hash1> <hash2> (compare user supplied hashes)
+// <value> --detect-algo (detects algorithm of supplied hash)
 public class Hash
 {
     public static void Run(string[] args)
