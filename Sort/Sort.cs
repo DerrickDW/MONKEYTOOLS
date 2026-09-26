@@ -1,10 +1,4 @@
-﻿using System.ComponentModel.Design;
-using System.Linq;
-using System.Text;
-using static System.IO.Directory;
-using System.IO;
-
-namespace MONKEYTOOLS.Sort;
+﻿namespace MONKEYTOOLS.Sort;
 
 public static class Sort
 {

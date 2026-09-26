@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-
-namespace MONKEYTOOLS.Calc;
+﻿namespace MONKEYTOOLS.Calc;
 
 public static class Calc
 {
@@ -22,15 +16,15 @@ public static class Calc
 
             if (string.IsNullOrWhiteSpace(input))
                 continue;
-            if (input.ToLower() == "exit")
+            if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
                 break;
-            if (input.ToLower() == "clear")
+            if (input.Equals("clear", StringComparison.OrdinalIgnoreCase))
             {
                 lastResult = 0;
                 Console.WriteLine("🐒 memory wiped");
                 continue;
             }
-            if (input.ToLower() == "help")
+            if (input.Equals("help", StringComparison.OrdinalIgnoreCase))
             {
                 Console.WriteLine("🐒 count yer banana's supports + - * / parentheses () exponents ^ last result as 'ans' clear memory 'clear'");
                 continue;

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.AccessControl;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.Json;
-using System.Text.RegularExpressions;
-
-namespace MONKEYTOOLS.Calc;
+﻿namespace MONKEYTOOLS.Calc;
 
 public class Parser
 {

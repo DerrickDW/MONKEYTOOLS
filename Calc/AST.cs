@@ -1,10 +1,4 @@
-﻿using MONKEYTOOLS.Calc;
-using System;
-using System.Collections.Generic;
-using System.Security.AccessControl;
-using System.Text;
-
-namespace MONKEYTOOLS.Calc;
+﻿namespace MONKEYTOOLS.Calc;
 
 public abstract class Ast
 {

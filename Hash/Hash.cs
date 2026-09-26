@@ -1,9 +1,5 @@
-﻿using System.ComponentModel.Design;
-using System.Runtime.CompilerServices;
-
-namespace MONKEYTOOLS.Hash;
+﻿namespace MONKEYTOOLS.Hash;
 using System.Security.Cryptography;
-using System.Text;
 using System;
 // TODO:
 // Finish Runner Logic, Args, User Input, Help

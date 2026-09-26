@@ -1,10 +1,4 @@
-﻿using System;
-using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
-
-namespace MONKEYTOOLS.Calc;
+﻿namespace MONKEYTOOLS.Calc;
 
 public static class Evaluator
 {
