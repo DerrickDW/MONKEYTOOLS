@@ -34,42 +34,39 @@ class Program
             return;
         }
         //get off the switch case
+        
+        //string tool = args[0].ToLower();
+
+        public void Run(string[] args) => Calc.Run();
         /*
-        string tool = args[0].ToLower();
 
-        switch (tool)
-        {
-            case "calc":
-                Calc.Run();
-                break;
+    case "scan":
+        Scan.Run(args.Skip(1).ToArray());
+        break;
 
-            case "scan":
-                Scan.Run(args.Skip(1).ToArray());
-                break;
+    case "nethack":
+        NethackWrapper.Run(args.Skip(1).ToArray());
+        break;
 
-            case "nethack":
-                NethackWrapper.Run(args.Skip(1).ToArray());
-                break;
-            
-            case "sort":
-                Sort.Run(args.Skip(1).ToArray());
-                break;
-            
-            case "hash":
-                Hash.Run(args.Skip(1).ToArray());
-                break;
-            //case "ugly":
-            //Ugly.Run(args.Skip(1).ToArray());
-            //break;
+    case "sort":
+        Sort.Run(args.Skip(1).ToArray());
+        break;
 
-            //case "wireshark":
-            //LaunchExternal("external/wireshark/Wireshark.exe");
-            //break;
+    case "hash":
+        Hash.Run(args.Skip(1).ToArray());
+        break;
+    //case "ugly":
+    //Ugly.Run(args.Skip(1).ToArray());
+    //break;
 
-            default:
-                Console.WriteLine($"🚬🐒 unknown tool: {tool}");
-                break;
-        }  
-        */
-    }
+    //case "wireshark":
+    //LaunchExternal("external/wireshark/Wireshark.exe");
+    //break;
+
+    default:
+        Console.WriteLine($"🚬🐒 unknown tool: {tool}");
+        break;
+}
+*/
+}
 }
