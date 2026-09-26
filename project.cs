@@ -9,6 +9,23 @@ class Program
 
     static void Main(string[] args)
     {
+
+    public interface ICommand
+    {
+        string Name { get; }
+        string Description { get; }
+        void Run(string[] args);
+    }
+
+    private var commands = new Dictionary<string, ICommand>(
+        StringComparer.OrdinalIgnoreCase)
+    {
+        //define commands
+        ["scan"] = new ScanCommand(),
+        ["sort"] = new SortCommand(),
+        ["hash"] = new SortCommand(),
+        ["nethack"] = new SortCommand(),
+    };
         Console.WriteLine("MONKEYTOOLS");
         Console.WriteLine("🐒 systems stable");
         if (args.Length == 0)
@@ -16,6 +33,8 @@ class Program
             Console.WriteLine("Usage: monkey <tool>");
             return;
         }
+        //get off the switch case
+        /*
         string tool = args[0].ToLower();
 
         switch (tool)
@@ -51,6 +70,6 @@ class Program
                 Console.WriteLine($"🚬🐒 unknown tool: {tool}");
                 break;
         }  
-        
+        */
     }
 }
